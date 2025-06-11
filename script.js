@@ -42,3 +42,11 @@ const teamMembers = [
 // estrapolare le chiavi che ci servono da inserire nel markup
 
 // creare il pezzo di markkup con il template literal
+
+// const [name] = teamMembers;
+
+for (let i = 0; i < teamMembers.length; i++) {
+  const member = teamMembers[i];
+
+  console.log(member);
+}

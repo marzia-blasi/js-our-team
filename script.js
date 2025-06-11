@@ -39,19 +39,12 @@ const teamMembers = [
 
 // Dato un array di oggetti rappresentante un team di un’azienda, creare una pagina dedicata in cui mostrare una card per ciascun componente.
 
-// funzione per ottenere il singolo oggetto
-function teamMember(Arrayobject) {
-  for (let i = 0; i < Arrayobject.length; i++) {
-    const member = Arrayobject[i];
+// recuper elemento dall'html
+const cardEl = document.getElementById("containercard");
 
-    return member;
-    //
-  }
-}
-//console.log(member);
+let members = "";
 
-// console.log(teamMember(teamMembers));
-let member = "";
+// loop for per separare i singoli oggetti
 for (let i = 0; i < teamMembers.length; i++) {
   member = teamMembers[i];
   console.log(member);
@@ -59,10 +52,8 @@ for (let i = 0; i < teamMembers.length; i++) {
   // estrapolare le chiavi che ci servono da inserire nel markup
   const { name, role, email, img } = member;
   console.log(name, role, email, img);
+
   // creare il pezzo di markkup con il template literal
-
-  console.log(img);
-
   const memberMarkup = `<div class="card" style="width: 18rem">
   <img src=${img} class="card-img-top" alt="..." />
   <div class="card-body">
@@ -72,7 +63,9 @@ for (let i = 0; i < teamMembers.length; i++) {
   <ul class="list-group list-group-flush">
     <li class="list-group-item">${email}</li>
   </ul>
-</div>`;
+ </div>`;
 
-  document.getElementById("containercard").innerHTML = memberMarkup;
+  members += memberMarkup;
 }
+
+cardEl.innerHTML = members;

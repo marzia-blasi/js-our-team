@@ -42,6 +42,7 @@ const teamMembers = [
 // recuper elemento dall'html
 const cardEl = document.getElementById("containercard");
 
+// variabile in cui vengono salvate le card complete
 let members = "";
 
 // loop for per separare i singoli oggetti
@@ -55,7 +56,7 @@ for (let i = 0; i < teamMembers.length; i++) {
 
   // creare il pezzo di markkup con il template literal
   const memberMarkup = `<div class="card" style="width: 18rem">
-  <img src=${img} class="card-img-top" alt="..." />
+  <img src=${img} class="card-img-start" alt="..." />
   <div class="card-body">
     <h5 class="card-title">${name}</h5>
     <p class="card-text">${role}</p>
@@ -68,4 +69,5 @@ for (let i = 0; i < teamMembers.length; i++) {
   members += memberMarkup;
 }
 
+// elementi aggiunti all'html
 cardEl.innerHTML = members;

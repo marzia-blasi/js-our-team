@@ -41,12 +41,35 @@ const teamMembers = [
 
 // estrapolare le chiavi che ci servono da inserire nel markup
 
-// creare il pezzo di markkup con il template literal
+//
+function teamMember(Arrayobject) {
+  for (let i = 0; i < Arrayobject.length; i++) {
+    const member = Arrayobject[i];
 
-// const [name] = teamMembers;
+    return member;
+    //
+  }
+}
+//console.log(member);
+
+// console.log(teamMember(teamMembers));
 
 for (let i = 0; i < teamMembers.length; i++) {
   const member = teamMembers[i];
-
   console.log(member);
+
+  const [{ name, role, img }] = member;
+  console.log(name, role, img);
 }
+
+// creare il pezzo di markkup con il template literal
+const memberMarkup = `<div class="card" style="width: 18rem">
+  <img src="${img}" class="card-img-top" alt="..." />
+  <div class="card-body">
+    <h5 class="card-title">${name}</h5>
+    <p class="card-text">${role}</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">${mail}</li>
+  </ul>
+</div>`;
